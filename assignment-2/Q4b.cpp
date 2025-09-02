@@ -4,10 +4,8 @@ using namespace std;
 
 int main() {
     string str;
-
     cout << "Enter a string: ";
     getline(cin, str);
-
     int n = str.length();
 
     // Swap characters from both ends
@@ -16,8 +14,6 @@ int main() {
         str[i] = str[n - i - 1];
         str[n - i - 1] = temp;
     }
-
     cout << "Reversed string: " << str << endl;
-
     return 0;
 }

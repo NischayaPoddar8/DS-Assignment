@@ -1,14 +1,11 @@
 #include <iostream>
 using namespace std;
 
-
-
 int remove_Duplicates(int arr[], int n) {
     if (n == 0){
         cout << "Array is empty";
     }
         
-
     int new_Size = 0;
 
     for (int i = 0; i < n; i++) {
@@ -22,7 +19,7 @@ int remove_Duplicates(int arr[], int n) {
             }
         }
 
-        // If not duplicate, add to new array portion
+        // If not duplicate, add to new array 
         if (!is_Duplicate) {
             arr[new_Size] = arr[i];
             new_Size++;

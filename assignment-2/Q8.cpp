@@ -1,5 +1,4 @@
 #include <iostream>
-#include <set>
 using namespace std;
 
 int main() {
@@ -9,19 +8,26 @@ int main() {
 
     int arr[n];
     cout << "Enter " << n << " elements:\n";
-
     for (int i = 0; i < n; i++) {
         cin >> arr[i];
     }
 
-    set<int> distinctElements;
-
-    // Insert elements into the set
+    int count = 0; 
     for (int i = 0; i < n; i++) {
-        distinctElements.insert(arr[i]);
+        bool isDuplicate = false;
+        for (int j = 0; j < i; j++) {
+            if (arr[i] == arr[j]) {
+                isDuplicate = true;
+                break;
+            }
+        }
+
+        if (!isDuplicate) {
+            count++; // new distinct element found
+        }
     }
 
-    cout << "Total number of distinct elements: " << distinctElements.size() << endl;
+    cout << "Total distinct elements: " << count << endl;
 
     return 0;
 }
